@@ -1,1 +1,12 @@
-@use '../core/variables' as vars;
+@use "../core/variables" as vars;
+
+.header {
+  padding: 20px;
+  background-color: #e5be3e;
+  text-align: center;
+  margin-bottom: 20px;
+
+  &__title {
+    color: #181e28;
+  }
+}
