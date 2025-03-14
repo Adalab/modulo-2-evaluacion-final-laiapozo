@@ -1,6 +1,8 @@
 ## Evaluación final - Módulo 2: JavaScript
 
-Este proyecto es el resultado de la evaluación final del Módulo 2 del bootcamp de programación web. Se trata de una página web de búsqueda de seriés de anime. Permite buscar animes por título, marcarlos como favoritos y almacenarlos en el Local Storage para mantener la información al recargar la página.
+Este proyecto es el resultado de la evaluación final del Módulo 2 del bootcamp de programación web. Se trata de una página web de búsqueda de series de anime. Permite buscar animes por título, marcarlos como favoritos y almacenarlos en el Local Storage para mantener la información al recargar la página.
+
+Puedes verlo aquí: [Tus Series de Anime](https://beta.adalab.es/modulo-2-evaluacion-final-laiapozo/)
 
 #### 🚀 Arrancar el proyecto
 
