@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/50876f28ea.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,33 +20,35 @@
 
   <body>
     <header class="header">
-      <h1 class="header__title">Buscador de Series de Anime</h1>
-    </header>
+  <h1 class="header__title">Buscador de Series de Anime</h1>
+</header>
 
     <form class="search">
-      <input
-        type="text"
-        placeholder="Buscar..."
-        class="search__text js-txt-search"
-      />
-      <input
-        type="submit"
-        value="Buscar"
-        class="search__submit js-submit-btn"
-      />
-      <input type="reset" value="Reset" class="search__reset js-reset-btn" />
-    </form>
+  <input
+    type="text"
+    placeholder="Buscar..."
+    class="search__text js-txt-search"
+  />
+  <input type="submit" value="Buscar" class="search__submit js-submit-btn" />
+  <input type="reset" value="Reset" class="search__reset js-reset-btn" />
+</form>
 
     <main class="container">
-      <section class="container__results">
-        <h2 class="container__results__title">Resultados</h2>
-        <ul class="js-list-shows"></ul>
-      </section>
-      <section class="container__favorites">
-        <h2 class="container__favorites__title">Favoritas</h2>
-        <ul class="js-list-favs"></ul>
-      </section>
-    </main>
+  <section class="container__results">
+    <h2 class="container__results__title">Resultados</h2>
+    <ul class="js-list-shows"></ul>
+  </section>
+  <section class="container__favorites">
+    <div>
+      <h2 class="container__favorites__title">Favoritas</h2>
+      <button class="js-delete-all">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+    <ul class="js-list-favs"></ul>
+  </section>
+</main>
+
 
     <script src="./js/main.js"></script>
   </body>
