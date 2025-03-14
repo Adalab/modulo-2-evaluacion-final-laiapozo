@@ -3,9 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
     
     <title>Tus Series de Anime</title>
-    <link rel="stylesheet" href="./assets/index-c6b530ac.css">
+    <link rel="stylesheet" href="./assets/index-2384b51a.css">
   </head>
 
   <body>
@@ -14,19 +20,27 @@
     </header>
 
     <form class="search">
-      <input type="text" placeholder="Buscar..." class="search__text js-txt-search" />
-      <input type="submit" value="Buscar" class="search__submit js-submit-btn" />
+      <input
+        type="text"
+        placeholder="Buscar..."
+        class="search__text js-txt-search"
+      />
+      <input
+        type="submit"
+        value="Buscar"
+        class="search__submit js-submit-btn"
+      />
       <input type="reset" value="Reset" class="search__reset" />
     </form>
 
     <main class="container">
       <section class="container__results">
-        <h2>Resultados</h2>
+        <h2 class="container__results__title">Resultados</h2>
         <ul class="js-list-shows"></ul>
       </section>
       <section class="container__favorites">
-        <h2>Favoritas</h2>
-        <ul></ul>
+        <h2 class="container__favorites__title">Favoritas</h2>
+        <ul class="js-list-favs"></ul>
       </section>
     </main>
 
