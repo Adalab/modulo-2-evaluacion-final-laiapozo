@@ -1,0 +1,7 @@
+@use "../core/variables" as vars;
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
