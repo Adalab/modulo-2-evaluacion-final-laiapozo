@@ -2,7 +2,7 @@ const listFavs = document.querySelector(".js-list-favs");
 let favShows = [];
 const savedShows = JSON.parse(localStorage.getItem("shows"));
 
-// Función: pintar las series en la lista de Favoritas 
+// Función: pintar las series en la lista de Favoritas
 const renderFavs = (shows) => {
   listFavs.innerHTML = "";
 
@@ -10,8 +10,10 @@ const renderFavs = (shows) => {
     const elementLi = document.createElement("li");
     const imgLi = document.createElement("img");
     const titleLi = document.createElement("h3");
+    const buttonLi = document.createElement("button");
     elementLi.appendChild(imgLi);
     elementLi.appendChild(titleLi);
+    elementLi.appendChild(buttonLi);
     listFavs.appendChild(elementLi);
 
     elementLi.id = show.mal_id;
@@ -27,10 +29,20 @@ const renderFavs = (shows) => {
 
     const contentTitle = document.createTextNode(show.title);
     titleLi.appendChild(contentTitle);
+
+    const contentButton = document.createTextNode("X");
+    buttonLi.appendChild(contentButton);
+    buttonLi.classList.add("js-delete-btn");
+    buttonLi.id = show.mal_id;
+
+    const deleteButtons = document.querySelectorAll(".js-delete-btn");
+    for (const deleteButton of deleteButtons) {
+      deleteButton.addEventListener("click", handleDeleteButton);
+    }
   }
 };
 
-// Función: cuando se hace click en una serie: destacarla, guardarla en el localStorage y pintarla en la lista de Favoritas
+// Función: cuando se hace click en una serie -> destacarla, guardarla en el localStorage y pintarla en la lista de Favoritas
 const handleShowClick = (ev) => {
   const idSelectedShow = parseInt(ev.currentTarget.id);
 
@@ -41,6 +53,21 @@ const handleShowClick = (ev) => {
   });
 
   favShows.push(selectedShow);
+
+  localStorage.setItem("shows", JSON.stringify(favShows));
+
+  renderFavs(favShows);
+};
+
+// Función: cuando se hace click en el botón de eliminar de la lista de favoritos, se quita de la lista y se pinta de nuevo
+const handleDeleteButton = (ev) => {
+  const idDeletedShow = parseInt(ev.currentTarget.id);
+
+  const deletedShow = favShows.findIndex((favShow) => {
+    return favShow.mal_id === idDeletedShow;
+  });
+
+  favShows.splice(deletedShow, 1);
 
   localStorage.setItem("shows", JSON.stringify(favShows));
 
