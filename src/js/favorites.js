@@ -1,21 +1,11 @@
-/*
-    - Crear lista favShows
-    - Seleccionar todos los lis (selectorALL) -> en search.js
-    - Por cada elemento li escuchar si ha hecho click -> en search.js
-    - Cuando la usuaria haga click:
-        > Guardar el id
-        > Buscar shows con ese id
-        > Añadir shows a la nueva lista favShows
-        > Añadir clase favorite al li
-        > Pintar favShows a la izquierda
-*/
 const listFavs = document.querySelector(".js-list-favs");
 let favShows = [];
+const savedShows = JSON.parse(localStorage.getItem("shows"));
 
-const renderFavs = (favShows) => {
+const renderFavs = (shows) => {
   listFavs.innerHTML = "";
 
-  for (const favShow of favShows) {
+  for (const show of shows) {
     const elementLi = document.createElement("li");
     const imgLi = document.createElement("img");
     const titleLi = document.createElement("h3");
@@ -23,23 +13,21 @@ const renderFavs = (favShows) => {
     elementLi.appendChild(titleLi);
     listFavs.appendChild(elementLi);
 
-    elementLi.id = favShow.mal_id;
+    elementLi.id = show.mal_id;
 
     if (
-      favShow.images.jpg.image_url ===
+      show.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
       imgLi.setAttribute("src", "https://placehold.co/225x310/e5be3e/FFF");
     } else {
-      imgLi.setAttribute("src", favShow.images.jpg.image_url);
+      imgLi.setAttribute("src", show.images.jpg.image_url);
     }
 
-    const contentTitle = document.createTextNode(favShow.title);
+    const contentTitle = document.createTextNode(show.title);
     titleLi.appendChild(contentTitle);
   }
 };
-
-renderFavs(favShows);
 
 const handleShowClick = (ev) => {
   const idSelectedShow = parseInt(ev.currentTarget.id);
@@ -50,6 +38,16 @@ const handleShowClick = (ev) => {
   });
 
   favShows.push(selectedShow);
-  
+
+  localStorage.setItem("shows", JSON.stringify(favShows));
+
   renderFavs(favShows);
 };
+
+if (savedShows !== null) {
+  for (const savedShow of savedShows) {
+    favShows.push(savedShow);
+  }
+}
+
+renderFavs(favShows);
