@@ -1,15 +1,31 @@
 @use "../core/variables" as vars;
 
-
 .container {
-    display: flex;
-    justify-content: space-around;
+  padding: 10px 20px 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  gap: 20px;
+  min-height: 1000px;
 
-    &__results {
-        border: 2px solid lightgrey;
-    }
+  &__results {
+    border-radius: 5px;
+    padding: 10px;
+    width: 50%;
+    background-color: #d46b2b;
+    color: #181e28;
+  }
 
-    &__favorites {
-        border: 2px solid lightgrey;
-    }
+  &__favorites {
+    border-radius: 5px;
+    padding: 10px;
+    width: 50%;
+    background-color: #2f2114;
+    color: #ded4c8;
+  }
+}
+
+.favorite {
+  background-color: #2f2114;
+  color: #ded4c8;
 }
