@@ -1,7 +1,7 @@
 /*
     - Crear lista favShows
-    - Seleccionar todos los lis (selectorALL)
-    - Por cada elemento li escuchar si ha hecho click
+    - Seleccionar todos los lis (selectorALL) -> en search.js
+    - Por cada elemento li escuchar si ha hecho click -> en search.js
     - Cuando la usuaria haga click:
         > Guardar el id
         > Buscar shows con ese id
@@ -24,7 +24,6 @@ const renderFavs = (favShows) => {
     listFavs.appendChild(elementLi);
 
     elementLi.id = favShow.mal_id;
-    elementLi.classList.add("js-show");
 
     if (
       favShow.images.jpg.image_url ===
@@ -44,9 +43,13 @@ renderFavs(favShows);
 
 const handleShowClick = (ev) => {
   const idSelectedShow = parseInt(ev.currentTarget.id);
+  ev.currentTarget.classList.add("favorite");
+
   const selectedShow = shows.find((show) => {
     return show.mal_id === idSelectedShow;
   });
+
   favShows.push(selectedShow);
+  
   renderFavs(favShows);
 };
