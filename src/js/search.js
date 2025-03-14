@@ -3,7 +3,8 @@ const textInput = document.querySelector(".js-txt-search");
 const listShows = document.querySelector(".js-list-shows");
 let shows = [];
 
-const renderAnime = (shows) => {
+// Función para pintar las series en la lista de Resultados
+const renderResults = (shows) => {
   listShows.innerHTML = "";
 
   for (const show of shows) {
@@ -29,7 +30,7 @@ const renderAnime = (shows) => {
     const contentTitle = document.createTextNode(show.title);
     titleLi.appendChild(contentTitle);
 
-    // Escucho en qué show ha hecho click para meterlo en favs
+    // Escuchar en qué serie ha hecho click
     const showsHtml = document.querySelectorAll(".js-show");
     for (const showHtml of showsHtml) {
       showHtml.addEventListener("click", handleShowClick);
@@ -37,6 +38,7 @@ const renderAnime = (shows) => {
   }
 };
 
+// Función: cuando se hace click en buscar: se piden al servidor los datos de la serie y se guardan
 const handleSearchClick = (ev) => {
   ev.preventDefault();
   const text = textInput.value;
@@ -45,7 +47,7 @@ const handleSearchClick = (ev) => {
     .then((response) => response.json())
     .then((data) => {
       shows = data.data;
-      renderAnime(shows);
+      renderResults(shows);
     });
 };
 
