@@ -4,4 +4,12 @@
 .container {
     display: flex;
     justify-content: space-around;
+
+    &__results {
+        border: 2px solid lightgrey;
+    }
+
+    &__favorites {
+        border: 2px solid lightgrey;
+    }
 }
