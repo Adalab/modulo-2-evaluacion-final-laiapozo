@@ -30,7 +30,7 @@ const renderResults = (shows) => {
     const contentTitle = document.createTextNode(show.title);
     titleLi.appendChild(contentTitle);
 
-    // Escuchar en qué serie ha hecho click
+    // Escuchar en qué serie se ha hecho click
     const showsHtml = document.querySelectorAll(".js-show");
     for (const showHtml of showsHtml) {
       showHtml.addEventListener("click", handleShowClick);
@@ -38,7 +38,7 @@ const renderResults = (shows) => {
   }
 };
 
-// Función: cuando se hace click en buscar: se piden al servidor los datos de la serie y se guardan
+// Función: cuando se hace click en buscar -> se piden al servidor los datos de la serie y se guardan
 const handleSearchClick = (ev) => {
   ev.preventDefault();
   const text = textInput.value;
