@@ -2,6 +2,7 @@ const listFavs = document.querySelector(".js-list-favs");
 let favShows = [];
 const savedShows = JSON.parse(localStorage.getItem("shows"));
 
+// Función: pintar las series en la lista de Favoritas 
 const renderFavs = (shows) => {
   listFavs.innerHTML = "";
 
@@ -29,8 +30,10 @@ const renderFavs = (shows) => {
   }
 };
 
+// Función: cuando se hace click en una serie: destacarla, guardarla en el localStorage y pintarla en la lista de Favoritas
 const handleShowClick = (ev) => {
   const idSelectedShow = parseInt(ev.currentTarget.id);
+
   ev.currentTarget.classList.add("favorite");
 
   const selectedShow = shows.find((show) => {
@@ -44,6 +47,7 @@ const handleShowClick = (ev) => {
   renderFavs(favShows);
 };
 
+// Si ya hay series favoritas guardadas en el localStorage, se pintan cuando se actualiza la página
 if (savedShows !== null) {
   for (const savedShow of savedShows) {
     favShows.push(savedShow);
