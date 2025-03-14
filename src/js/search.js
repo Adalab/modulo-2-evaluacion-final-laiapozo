@@ -17,6 +17,8 @@ const listShows = document.querySelector(".js-list-shows");
 let shows = [];
 
 const renderAnime = (shows) => {
+  listShows.innerHTML = "";
+
   for (const show of shows) {
     const elementLi = document.createElement("li");
     const imgLi = document.createElement("img");
@@ -26,7 +28,13 @@ const renderAnime = (shows) => {
     listShows.appendChild(elementLi);
 
     elementLi.classList.add(show.mal_id);
-    imgLi.setAttribute("src", show.images.jpg.image_url);
+
+    if (show.images.jpg.image_url === "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png") {
+      imgLi.setAttribute("src", "https://placehold.co/225x310/e5be3e/FFF");
+    } else {
+      imgLi.setAttribute("src", show.images.jpg.image_url);
+    }
+
     const contentTitle = document.createTextNode(show.title);
     titleLi.appendChild(contentTitle);
   }
