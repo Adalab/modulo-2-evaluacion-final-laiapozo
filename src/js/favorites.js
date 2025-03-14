@@ -1,6 +1,7 @@
 const listFavs = document.querySelector(".js-list-favs");
 let favShows = [];
 const savedShows = JSON.parse(localStorage.getItem("shows"));
+const deleteAllButton = document.querySelector(".js-delete-all");
 
 // Función: pintar las series en la lista de Favoritas
 const renderFavs = (shows) => {
@@ -59,7 +60,7 @@ const handleShowClick = (ev) => {
   renderFavs(favShows);
 };
 
-// Función: cuando se hace click en el botón de eliminar de la lista de favoritos, se quita de la lista y se pinta de nuevo
+// Función: cuando se hace click en el botón de eliminar X de la lista de favoritos -> se quita de la lista y se pinta de nuevo
 const handleDeleteButton = (ev) => {
   const idDeletedShow = parseInt(ev.currentTarget.id);
 
@@ -74,6 +75,13 @@ const handleDeleteButton = (ev) => {
   renderFavs(favShows);
 };
 
+// Función: cuando se hace click en la papelera -> se eliminan todos los favoritos del array, se vacía el localStorage y se pinta de nuevo
+const handleDeleteAllButton = () => {
+  favShows = [];
+  renderFavs(favShows);
+  localStorage.removeItem("shows");
+}
+
 // Si ya hay series favoritas guardadas en el localStorage, se pintan cuando se actualiza la página
 if (savedShows !== null) {
   for (const savedShow of savedShows) {
@@ -82,3 +90,5 @@ if (savedShows !== null) {
 }
 
 renderFavs(favShows);
+
+deleteAllButton.addEventListener("click", handleDeleteAllButton);
