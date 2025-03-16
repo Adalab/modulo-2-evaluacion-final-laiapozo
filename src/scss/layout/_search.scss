@@ -1,18 +1,33 @@
 @use "../core/variables" as vars;
 
 .search {
-  padding: 20px 20px 10px;
+  padding: 10px 20px 20px;
   text-align: center;
+  background-color: #beaa9c;
 
   &__text {
-    padding: 5px 10px;
+    padding: 5px 100px 5px 10px;
+    background-color: #beaa9c;
+    border: 2px solid #181e28;
+    border-radius: 5px;
+    color: #181e28;
+
+    &:focus {
+      outline: none;
+      box-shadow: #181e28 0px 0px 5px;
+    }
   }
 
-  &__submit {
+  &__submit, &__reset {
     padding: 5px 10px;
-  }
+    background-color: #181e28;
+    border: 2px solid #181e28;
+    border-radius: 5px;
+    color: #beaa9c;
 
-  &__reset {
-    padding: 5px 10px;
+    &:hover {
+      opacity: 70%;
+      cursor: pointer;
+    }
   }
 }
