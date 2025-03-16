@@ -46,6 +46,14 @@
   & li {
     width: 200px;
     text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      border: 5px solid #181e28;
+      color: #181e28;
+      box-shadow: #181e28 0px 0px 4px 1px;
+    }
+
     & img {
       width: 100%;
     }
@@ -99,4 +107,5 @@
 .favorite {
   border: 5px solid #181e28;
   color: #181e28;
+  box-shadow: #181e28 0px 0px 4px 1px;
 }

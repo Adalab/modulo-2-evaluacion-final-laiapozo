@@ -23,7 +23,10 @@ const renderFavs = (shows) => {
       show.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
-      imgLi.setAttribute("src", "https://placehold.co/225x310?text=Image%20not%20found");
+      imgLi.setAttribute(
+        "src",
+        "https://placehold.co/225x310?text=Image%20not%20found"
+      );
       imgLi.setAttribute("alt", "Portada no encontrada");
     } else {
       imgLi.setAttribute("src", show.images.jpg.image_url);
@@ -55,9 +58,10 @@ const handleShowClick = (ev) => {
     return show.mal_id === idSelectedShow;
   });
 
-  favShows.push(selectedShow);
-
-  localStorage.setItem("shows", JSON.stringify(favShows));
+  if (!favShows.includes(selectedShow)) {
+    favShows.push(selectedShow);
+    localStorage.setItem("shows", JSON.stringify(favShows));
+  }
 
   renderFavs(favShows);
 };
@@ -82,7 +86,7 @@ const handleDeleteAllButton = () => {
   favShows = [];
   renderFavs(favShows);
   localStorage.removeItem("shows");
-}
+};
 
 // Si ya hay series favoritas guardadas en el localStorage, se pintan cuando se actualiza la página
 if (savedShows !== null) {
