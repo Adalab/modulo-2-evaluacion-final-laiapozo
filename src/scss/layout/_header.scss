@@ -2,10 +2,10 @@
 
 .header {
   padding: 20px;
-  background-color: #beaa9c;
+  background-color: vars.$bg-color;
   text-align: center;
 
   &__title {
-    color: #181e28;
+    color: vars.$main-color;
   }
 }

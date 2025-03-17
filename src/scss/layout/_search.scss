@@ -3,27 +3,27 @@
 .search {
   padding: 10px 20px 20px;
   text-align: center;
-  background-color: #beaa9c;
+  background-color: vars.$bg-color;
 
   &__text {
     padding: 5px 100px 5px 10px;
-    background-color: #beaa9c;
-    border: 2px solid #181e28;
+    background-color: vars.$bg-color;
+    border: 2px solid vars.$main-color;
     border-radius: 5px;
-    color: #181e28;
+    color: vars.$main-color;
 
     &:focus {
       outline: none;
-      box-shadow: #181e28 0px 0px 5px;
+      box-shadow: vars.$main-color 0px 0px 5px;
     }
   }
 
   &__submit, &__reset {
     padding: 5px 10px;
-    background-color: #181e28;
-    border: 2px solid #181e28;
+    background-color: vars.$main-color;
+    border: 2px solid vars.$main-color;
     border-radius: 5px;
-    color: #beaa9c;
+    color: vars.$bg-color;
 
     &:hover {
       opacity: 70%;

@@ -7,29 +7,29 @@
   justify-content: space-around;
   gap: 20px;
   min-height: 87vh;
-  background-color: #beaa9c;
+  background-color: vars.$bg-color;
 
   &__results {
     border-radius: 5px;
-    border: 2px solid #2f2114;
+    border: 2px solid vars.$results-color;
     width: 65%;
-    color: #ded4c8;
+    color: vars.$font-color;
 
     &__title {
-      background-color: #2f2114;
-      color: #ded4c8;
+      background-color: vars.$results-color;
+      color: vars.$font-color;
       padding: 10px;
     }
   }
 
   &__favorites {
     border-radius: 5px;
-    border: 2px solid #d46b2b;
+    border: 2px solid vars.$favs-color;
     width: 35%;
-    color: #ded4c8;
+    color: vars.$font-color;
 
     &__title {
-      background-color: #d46b2b;
+      background-color: vars.$favs-color;
       padding: 10px;
       display: flex;
       justify-content: space-between;
@@ -49,9 +49,9 @@
 
     &:hover {
       cursor: pointer;
-      border: 5px solid #181e28;
-      color: #181e28;
-      box-shadow: #181e28 0px 0px 4px 1px;
+      border: 5px solid vars.$main-color;
+      color: vars.$main-color;
+      box-shadow: vars.$main-color 0px 0px 4px 1px;
     }
 
     & img {
@@ -80,8 +80,8 @@
       font-weight: bold;
       padding: 5px 8px;
       border-radius: 20px;
-      color: #d46b2b;
-      background-color: #ded4c8;
+      color: vars.$favs-color;
+      background-color: vars.$font-color;
 
       &:hover {
         cursor: pointer;
@@ -95,8 +95,8 @@
   border: none;
   padding: 5px 8px;
   border-radius: 20px;
-  color: #d46b2b;
-  background-color: #ded4c8;
+  color: vars.$favs-color;
+  background-color: vars.$font-color;
 
   &:hover {
     cursor: pointer;
@@ -105,7 +105,7 @@
 }
 
 .favorite {
-  border: 5px solid #181e28;
-  color: #181e28;
-  box-shadow: #181e28 0px 0px 4px 1px;
+  border: 5px solid vars.$main-color;
+  color: vars.$main-color;
+  box-shadow: vars.$main-color 0px 0px 4px 1px;
 }
