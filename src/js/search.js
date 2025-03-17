@@ -22,7 +22,10 @@ const renderResults = (shows) => {
       show.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
-      imgLi.setAttribute("src", "https://placehold.co/225x310?text=Image%20not%20found");
+      imgLi.setAttribute(
+        "src",
+        "https://placehold.co/225x310?text=Image%20not%20found"
+      );
       imgLi.setAttribute("alt", "Portada no encontrada");
     } else {
       imgLi.setAttribute("src", show.images.jpg.image_url);

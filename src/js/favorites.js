@@ -66,14 +66,14 @@ const handleShowClick = (ev) => {
   renderFavs(favShows);
 };
 
-// Función: cuando se hace click en el botón de eliminar X de la lista de favoritos -> se quita de la lista y se pinta de nuevo
+// Función: cuando se hace click en el botón de eliminar X de la lista de favoritos -> se quita de la lista, se le quita la clase favorite y se pinta de nuevo
 const handleDeleteButton = (ev) => {
   const idDeletedShow = parseInt(ev.currentTarget.id);
 
-  const showsLi = document.querySelectorAll(".js-show");
-  for (const showLi of showsLi) {
-    if (parseInt(showLi.id) === idDeletedShow) {
-      showLi.classList.remove("favorite");
+  const elementsLi = document.querySelectorAll(".js-show");
+  for (const elementLi of elementsLi) {
+    if (parseInt(elementLi.id) === idDeletedShow) {
+      elementLi.classList.remove("favorite");
     }
   }
 
@@ -90,9 +90,9 @@ const handleDeleteButton = (ev) => {
 
 // Función: cuando se hace click en la papelera -> se quita la clase favorite, se eliminan todos los favoritos del array, se vacía el localStorage y se pinta de nuevo (vacío)
 const handleDeleteAllButton = () => {
-  const showsLi = document.querySelectorAll(".js-show");
-  for (const showLi of showsLi) {
-    showLi.classList.remove("favorite");
+  const elementsLi = document.querySelectorAll(".js-show");
+  for (const elementLi of elementsLi) {
+    elementLi.classList.remove("favorite");
   }
 
   favShows = [];

@@ -18,7 +18,8 @@
     }
   }
 
-  &__submit, &__reset {
+  &__submit,
+  &__reset {
     padding: 5px 10px;
     background-color: vars.$main-color;
     border: 2px solid vars.$main-color;
