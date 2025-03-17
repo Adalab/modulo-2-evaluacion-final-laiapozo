@@ -83,6 +83,11 @@ const handleDeleteButton = (ev) => {
 
 // Función: cuando se hace click en la papelera -> se eliminan todos los favoritos del array, se vacía el localStorage y se pinta de nuevo
 const handleDeleteAllButton = () => {
+  const showsLi = document.querySelectorAll(".js-show");
+  for (const showLi of showsLi) {
+    showLi.classList.remove("favorite");
+  }
+
   favShows = [];
   renderFavs(favShows);
   localStorage.removeItem("shows");
