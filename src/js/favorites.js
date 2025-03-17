@@ -70,6 +70,13 @@ const handleShowClick = (ev) => {
 const handleDeleteButton = (ev) => {
   const idDeletedShow = parseInt(ev.currentTarget.id);
 
+  const showsLi = document.querySelectorAll(".js-show");
+  for (const showLi of showsLi) {
+    if (parseInt(showLi.id) === idDeletedShow) {
+      showLi.classList.remove("favorite");
+    }
+  }
+
   const deletedShow = favShows.findIndex((favShow) => {
     return favShow.mal_id === idDeletedShow;
   });
