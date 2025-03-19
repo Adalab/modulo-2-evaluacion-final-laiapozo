@@ -11,9 +11,13 @@ const renderResults = (shows) => {
     const elementLi = document.createElement("li");
     const imgLi = document.createElement("img");
     const titleLi = document.createElement("h3");
+    const pLi = document.createElement("p");
+    const recommended = document.createElement("p");
     elementLi.appendChild(imgLi);
     elementLi.appendChild(titleLi);
     listShows.appendChild(elementLi);
+    elementLi.appendChild(pLi);
+    elementLi.appendChild(recommended);
 
     elementLi.id = show.mal_id;
     elementLi.classList.add("js-show");
@@ -34,6 +38,14 @@ const renderResults = (shows) => {
 
     const contentTitle = document.createTextNode(show.title);
     titleLi.appendChild(contentTitle);
+
+    const contentP = document.createTextNode(show.score);
+    pLi.appendChild(contentP);
+    
+    const contentRecommended = document.createTextNode("Recomendado");
+    if (show.score > 7) {
+      recommended.appendChild(contentRecommended);
+    }
 
     // Escuchar en qué serie se ha hecho click
     const showsHtml = document.querySelectorAll(".js-show");
